@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ثانوية الجزائر - أنشطة المتعلمات</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0f2c59;
+      --blue: #1e78c8;
+      --sky: #e0f2fe;
+      --green: #15803d;
+      --green-soft: #dcfce7;
+      --gold: #eab308;
+      --danger: #dc2626;
+      --danger-soft: #fee2e2;
+      --bg: #f4f8fc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #cbd5e1;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .top-bar {
+      background: var(--navy);
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+
+    .eco-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(21, 128, 61, 0.4);
+      border: 1px solid rgba(74, 222, 128, 0.5);
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-weight: 700;
+    }
+
+    .admin-open-btn {
+      background: rgba(255,255,255,0.16);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.35);
+      padding: 6px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.86rem;
+    }
+    .admin-open-btn:hover { background: rgba(255,255,255,0.28); }
+
+    header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+      color: #fff;
+      padding: 32px 20px 65px;
+      text-align: center;
+    }
+
+    .logo-wrap {
+      width: 125px;
+      height: 125px;
+      margin: 0 auto 12px;
+      background: #fff;
+      border-radius: 50%;
+      padding: 8px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 4px solid var(--gold);
+    }
+
+    .logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    header p {
+      color: #dbeafe;
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: 1rem;
+    }
+
+    .reg-section {
+      max-width: 960px;
+      margin: -40px auto 30px;
+      padding: 0 16px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .reg-card {
+      background: #fff;
+      border: 2px solid #bfdbfe;
+      border-radius: 22px;
+      padding: 26px;
+      box-shadow: 0 15px 35px rgba(15, 44, 89, 0.12);
+    }
+
+    .reg-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #f1f5f9;
+    }
+
+    .reg-header h2 {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: var(--navy);
+    }
+
+    .status-badge {
+      font-weight: 800;
+      font-size: 0.82rem;
+      padding: 5px 12px;
+      border-radius: 50px;
+      background: var(--green-soft);
+      color: var(--green);
+    }
+    .status-badge.demo {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .form-field label {
+      display: block;
+      font-weight: 800;
+      font-size: 0.9rem;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .form-field input,
+    .form-field select {
+      width: 100%;
+      padding: 11px 12px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font-size: 0.96rem;
+      font-weight: 600;
+      background: #f8fafc;
+      color: var(--text);
+    }
+
+    .form-field input:focus,
+    .form-field select:focus {
+      outline: none;
+      border-color: var(--blue);
+      background: #fff;
+    }
+
+    .form-field.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      color: #fff;
+      font-weight: 900;
+      font-size: 1.08rem;
+      cursor: pointer;
+      transition: transform 0.15s, opacity 0.2s;
+    }
+    .btn-submit:hover { opacity: 0.94; transform: translateY(-1px); }
+    .btn-submit:disabled { background: #94a3b8; cursor: not-allowed; }
+
+    .note-mini {
+      margin-top: 12px;
+      font-size: 0.88rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .alert {
+      padding: 13px 16px;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      margin-top: 14px;
+      display: none;
+      text-align: center;
+    }
+    .alert.success { display: block; background: var(--green-soft); color: var(--green); border: 1px solid #86efac; }
+    .alert.error { display: block; background: var(--danger-soft); color: var(--danger); border: 1px solid #fca5a5; }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 10px 16px 50px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .section-head h2 {
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: var(--navy);
+    }
+
+    .filter-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .pill-btn {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 7px 15px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .pill-btn.active, .pill-btn:hover {
+      background: var(--navy);
+      color: #fff;
+      border-color: var(--navy);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(15, 44, 89, 0.08);
+    }
+
+    .card.full {
+      background: #fafafa;
+      border-color: #fecaca;
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      gap: 8px;
+    }
+
+    .icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--sky);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.65rem;
+      flex-shrink: 0;
+    }
+
+    .dept-tag {
+      background: #f1f5f9;
+      color: var(--navy);
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 4px 11px;
+      border-radius: 50px;
+    }
+
+    .card h3 {
+      font-size: 1.18rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .seats-info { margin-bottom: 14px; }
+
+    .seats-text {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .seats-text .avail { color: var(--green); }
+    .seats-text .low { color: #d97706; }
+    .seats-text .none { color: var(--danger); }
+
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 50px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--green), var(--blue));
+      border-radius: 50px;
+      transition: width 0.35s ease;
+    }
+    .progress-fill.low { background: #f59e0b; }
+    .progress-fill.full { background: var(--danger); }
+
+    .btn-card {
+      width: 100%;
+      padding: 10px;
+      border: 1.5px solid var(--blue);
+      border-radius: 10px;
+      background: #eff6ff;
+      color: var(--navy);
+      font-weight: 800;
+      font-size: 0.94rem;
+      cursor: pointer;
+    }
+    .btn-card:hover { background: var(--blue); color: #fff; }
+    .btn-card:disabled {
+      background: #e2e8f0;
+      border-color: #cbd5e1;
+      color: #64748b;
+      cursor: not-allowed;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.65);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .modal.open { display: flex; }
+
+    .modal-box {
+      background: #fff;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 820px;
+      padding: 26px;
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .close-btn {
+      position: absolute;
+      left: 16px;
+      top: 14px;
+      background: #f1f5f9;
+      border: none;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+
+    .table-box {
+      overflow-x: auto;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      margin-top: 14px;
+    }
+
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: right; border-bottom: 1px solid #e2e8f0; }
+    th { background: #f1f5f9; color: var(--navy); font-weight: 800; }
+
+    .btn-excel {
+      background: var(--green);
+      color: #fff;
+      border: none;
+      padding: 9px 16px;
+      border-radius: 9px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    footer {
+      background: var(--navy);
+      color: #cbd5e1;
+      text-align: center;
+      padding: 24px 16px;
+      font-size: 0.92rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="eco-pill">🌿 مدرسة صديقة للبيئة • تأسست عام ١٩٥٩م</div>
+    <button class="admin-open-btn" onclick="openAdminLogin()">🔐 لوحة المشرفة</button>
+  </div>
+
+  <header>
+    <div class="logo-wrap">
+      <img src="logo.png" alt="شعار ثانوية الجزائر" onerror="this.parentElement.innerHTML='<span style=&quot;font-size:2.4rem&quot;>🏫</span>'">
+    </div>
+    <h1>ثانوية الجزائر - بنات</h1>
+    <p>بوابة الأنشطة المدرسية — اختاري نشاطاً واحداً كل أسبوع (الحد الأقصى 32 متعلمة لكل نشاط)</p>
+  </header>
+
+  <section class="reg-section" id="regSection">
+    <div class="reg-card">
+      <div class="reg-header">
+        <h2>📝 تسجيل / تغيير النشاط الأسبوعي</h2>
+        <span class="status-badge" id="connectionBadge">🧪 جاهز</span>
+      </div>
+
+      <form id="regForm" onsubmit="submitRegistration(event)">
+        <div class="form-grid">
+          <div class="form-field">
+            <label>📅 العام الدراسي</label>
+            <select id="academicYear" onchange="loadData()">
+              <option value="2026 - 2027">2026 - 2027</option>
+              <option value="2027 - 2028">2027 - 2028</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label>🗓️ الأسبوع الدراسي</label>
+            <select id="weekSelect" onchange="loadData()">
+              <option value="الأسبوع 1">الأسبوع 1</option>
+              <option value="الأسبوع 2">الأسبوع 2</option>
+              <option value="الأسبوع 3">الأسبوع 3</option>
+              <option value="الأسبوع 4">الأسبوع 4</option>
+              <option value="الأسبوع 5">الأسبوع 5</option>
+              <option value="الأسبوع 6">الأسبوع 6</option>
+              <option value="الأسبوع 7">الأسبوع 7</option>
+              <option value="الأسبوع 8">الأسبوع 8</option>
+              <option value="الأسبوع 9">الأسبوع 9</option>
+              <option value="الأسبوع 10">الأسبوع 10</option>
+              <option value="الأسبوع 11">الأسبوع 11</option>
+              <option value="الأسبوع 12">الأسبوع 12</option>
+              <option value="الأسبوع 13">الأسبوع 13</option>
+              <option value="الأسبوع 14">الأسبوع 14</option>
+              <option value="الأسبوع 15">الأسبوع 15</option>
+              <option value="الأسبوع 16">الأسبوع 16</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label>👩‍🎓 الاسم الثلاثي للمتعلمة</label>
+            <input type="text" id="studentName" required placeholder="مثال: سارة فهد محمد" />
+          </div>
+
+          <div class="form-field">
+            <label>🏫 الصف والشعبة</label>
+            <select id="studentClass" required>
+              <option value="">-- اختاري الصف --</option>
+              <optgroup label="الصف العاشر">
+                <option value="1-10">1-10</option>
+                <option value="2-10">2-10</option>
+                <option value="3-10">3-10</option>
+                <option value="4-10">4-10</option>
+                <option value="5-10">5-10</option>
+                <option value="6-10">6-10</option>
+              </optgroup>
+              <optgroup label="الصف الحادي عشر (علمي)">
+                <option value="11ع1">11ع1</option>
+                <option value="11ع2">11ع2</option>
+                <option value="11ع3">11ع3</option>
+                <option value="11ع4">11ع4</option>
+                <option value="11ع5">11ع5</option>
+                <option value="11ع6">11ع6</option>
+                <option value="11ع7">11ع7</option>
+                <option value="11ع8">11ع8</option>
+              </optgroup>
+              <optgroup label="الصف الحادي عشر (أدبي)">
+                <option value="11د1">11د1</option>
+              </optgroup>
+              <optgroup label="الصف الثاني عشر (علمي)">
+                <option value="12ع1">12ع1</option>
+                <option value="12ع2">12ع2</option>
+                <option value="12ع3">12ع3</option>
+                <option value="12ع4">12ع4</option>
+                <option value="12ع5">12ع5</option>
+                <option value="12ع6">12ع6</option>
+                <option value="12ع7">12ع7</option>
+              </optgroup>
+              <optgroup label="الصف الثاني عشر (أدبي)">
+                <option value="12د1">12د1</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div class="form-field full-width">
+            <label>🌟 اختاري النشاط (من القائمة المنسدلة)</label>
+            <select id="activitySelect" required>
+              <option value="">-- اختاري النشاط من القائمة --</option>
+              <option value="جماعة الأدب">📚 جماعة الأدب (قسم اللغة العربية)</option>
+              <option value="جماعة القصة">📖 جماعة القصة (قسم اللغة الإنجليزية)</option>
+              <option value="جماعة التربية الإسلامية">🕌 جماعة التربية الإسلامية (قسم التربية الإسلامية)</option>
+              <option value="جماعة البحوث العلمية">📐 جماعة البحوث العلمية (قسم الرياضيات)</option>
+              <option value="جماعة المختبر">🧪 جماعة المختبر (قسم الكيمياء)</option>
+              <option value="جماعة المشروعات العلمية">⚡ جماعة المشروعات العلمية (قسم الفيزياء)</option>
+              <option value="جماعة حماية البيئة">🌿 جماعة حماية البيئة (قسم الأحياء)</option>
+              <option value="جماعة الجيولوجيا">🪨 جماعة الجيولوجيا (قسم الجيولوجيا)</option>
+              <option value="جماعة الإيقاع الموسيقي">🎵 جماعة الإيقاع الموسيقي (قسم الموسيقى)</option>
+              <option value="جماعة الرسم">🎨 جماعة الرسم (قسم التربية الفنية)</option>
+              <option value="جماعة التعاون المدرسي">🤝 جماعة التعاون المدرسي (قسم الأخصائيات)</option>
+              <option value="جماعة المعارض والحاسوب">💻 جماعة المعارض والحاسوب (قسم الحاسوب)</option>
+              <option value="جماعة الألعاب الشعبية">🏃‍♀️ جماعة الألعاب الشعبية (قسم التربية البدنية)</option>
+              <option value="جماعة الخطابة">🎙️ جماعة الخطابة (قسم اللغة الفرنسية)</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit" id="submitBtn">✅ تأكيد اختيار النشاط</button>
+      </form>
+
+      <div id="regAlert" class="alert"></div>
+
+      <p class="note-mini">
+        💡 ملاحظة: إذا رغبتِ في تغيير نشاطك خلال نفس الأسبوع، أعيدي التسجيل بنفس اسمك الثلاثي وصفك واختاري النشاط الجديد وسيتحدّث تلقائياً.
+      </p>
+    </div>
+  </section>
+
+  <main class="container">
+    <div class="section-head">
+      <h2>📊 متابعة المقاعد المتاحة في الأنشطة (14 نشاطاً)</h2>
+      <div class="filter-pills">
+        <button class="pill-btn active" onclick="setFilter('all', this)">الكل</button>
+        <button class="pill-btn" onclick="setFilter('available', this)">متاح للتسجيل</button>
+        <button class="pill-btn" onclick="setFilter('full', this)">مكتمل (32)</button>
+      </div>
+    </div>
+
+    <div class="grid" id="cardsGrid"></div>
+  </main>
+
+  <footer>
+    جميع الحقوق محفوظة © ثانوية الجزائر - بنات | بوابة الأنشطة المدرسية
+  </footer>
+
+  <div class="modal" id="adminModal">
+    <div class="modal-box">
+      <button class="close-btn" onclick="closeAdminModal()">&times;</button>
+      <h3 style="color: var(--navy); margin-bottom: 12px;">🔐 لوحة المشرفة — متابعة وتصدير الاختيارات</h3>
+
+      <div id="adminAuthBox">
+        <div class="form-field" style="margin-bottom: 12px;">
+          <label> الرقم السري للمشرفة </label>
+          <input type="password" id="adminPinInput" placeholder="****" />
+        </div>
+        <button class="btn-submit" onclick="verifyAdminPin()">دخول</button>
+        <div id="pinError" class="alert"></div>
+      </div>
+
+      <div id="adminContent" style="display:none;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:10px;">
+          <span id="adminSummaryText" style="font-weight:800; color:var(--blue);"></span>
+          <button class="btn-excel" onclick="exportCSV()">📥 تحميل ملف Excel (CSV)</button>
+        </div>
+        <div class="table-box">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>الاسم الثلاثي</th>
+                <th>الصف</th>
+                <th>النشاط المختار</th>
+                <th>الأسبوع</th>
+              </tr>
+            </thead>
+            <tbody id="adminTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ضعي رابط Google Apps Script هنا لاحقاً بين علامتي التنصيص
+    const SCRIPT_URL = "";
+
+    const MAX_SEATS = 32;
+    const ADMIN_PIN = "1959";
+
+    const ACTIVITIES = [
+      { id: "جماعة الأدب", name: "جماعة الأدب", dept: "قسم اللغة العربية", icon: "📚" },
+      { id: "جماعة القصة", name: "جماعة القصة", dept: "قسم اللغة الإنجليزية", icon: "📖" },
+      { id: "جماعة التربية الإسلامية", name: "جماعة التربية الإسلامية", dept: "قسم التربية الإسلامية", icon: "🕌" },
+      { id: "جماعة البحوث العلمية", name: "جماعة البحوث العلمية", dept: "قسم الرياضيات", icon: "📐" },
+      { id: "جماعة المختبر", name: "جماعة المختبر", dept: "قسم الكيمياء", icon: "🧪" },
+      { id: "جماعة المشروعات العلمية", name: "جماعة المشروعات العلمية", dept: "قسم الفيزياء", icon: "⚡" },
+      { id: "جماعة حماية البيئة", name: "جماعة حماية البيئة", dept: "قسم الأحياء", icon: "🌿" },
+      { id: "جماعة الجيولوجيا", name: "جماعة الجيولوجيا", dept: "قسم الجيولوجيا", icon: "🪨" },
+      { id: "جماعة الإيقاع الموسيقي", name: "جماعة الإيقاع الموسيقي", dept: "قسم الموسيقى", icon: "🎵" },
+      { id: "جماعة الرسم", name: "جماعة الرسم", dept: "قسم التربية الفنية", icon: "🎨" },
+      { id: "جماعة التعاون المدرسي", name: "جماعة التعاون المدرسي", dept: "قسم الأخصائيات", icon: "🤝" },
+      { id: "جماعة المعارض والحاسوب", name: "جماعة المعارض والحاسوب", dept: "قسم الحاسوب", icon: "💻" },
+      { id: "جماعة الألعاب الشعبية", name: "جماعة الألعاب الشعبية", dept: "قسم التربية البدنية", icon: "🏃‍♀️" },
+      { id: "جماعة الخطابة", name: "جماعة الخطابة", dept: "قسم اللغة الفرنسية", icon: "🎙️" }
+    ];
+
+    let currentFilter = "all";
+    let activityCounts = {};
+    let currentRecords = [];
+    let memoryFallback = [];
+
+    function safeGetRecords() {
+      try {
+        return JSON.parse(localStorage.getItem("aljazair_records") || "[]");
+      } catch (e) {
+        return memoryFallback;
+      }
+    }
+
+    function safeSaveRecords(arr) {
+      memoryFallback = arr;
+      try {
+        localStorage.setItem("aljazair_records", JSON.stringify(arr));
+      } catch (e) {
+        // المتصفح يمنع الحفظ المحلي على الملف المباشر؛ يعتمد على الذاكرة المؤقتة
+      }
+    }
+
+    function setFilter(type, btn) {
+      currentFilter = type;
+      document.querySelectorAll(".pill-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      renderCards();
+    }
+
+    function normalizeArabic(str) {
+      return (str || "")
+        .trim()
+        .replace(/\s+/g, " ")
+        .replace(/[أإآ]/g, "ا")
+        .replace(/ة/g, "ه")
+        .replace(/ى/g, "ي");
+    }
+
+    function recountFromRecords() {
+      activityCounts = {};
+      ACTIVITIES.forEach(a => activityCounts[a.id] = 0);
+      currentRecords.forEach(r => {
+        if (activityCounts[r.activity] !== undefined) {
+          activityCounts[r.activity]++;
+        }
+      });
+    }
+
+    function populateActivitySelect() {
+      const sel = document.getElementById("activitySelect");
+      const prevVal = sel.value;
+      sel.innerHTML = '<option value="">-- اختاري النشاط من القائمة --</option>';
+      ACTIVITIES.forEach(act => {
+        const used = activityCounts[act.id] || 0;
+        const left = Math.max(0, MAX_SEATS - used);
+        const opt = document.createElement("option");
+        opt.value = act.id;
+        opt.textContent = left === 0
+          ? `${act.icon} ${act.name} (${act.dept}) — مكتمل ❌`
+          : `${act.icon} ${act.name} (${act.dept}) — متبقي ${left} مقعد`;
+        if (left === 0) opt.disabled = true;
+        if (prevVal === act.id && left > 0) opt.selected = true;
+        sel.appendChild(opt);
+      });
+    }
+
+    function renderCards() {
+      const grid = document.getElementById("cardsGrid");
+      grid.innerHTML = "";
+
+      ACTIVITIES.forEach(act => {
+        const used = activityCounts[act.id] || 0;
+        const left = Math.max(0, MAX_SEATS - used);
+        const isFull = left === 0;
+        const pct = Math.min(100, Math.round((used / MAX_SEATS) * 100));
+
+        if (currentFilter === "available" && isFull) return;
+        if (currentFilter === "full" && !isFull) return;
+
+        let statusClass = "avail";
+        let barClass = "";
+        let statusLabel = `متبقي ${left} مقعد`;
+        if (isFull) {
+          statusClass = "none";
+          barClass = "full";
+          statusLabel = "مكتمل (32 / 32)";
+        } else if (left <= 6) {
+          statusClass = "low";
+          barClass = "low";
+          statusLabel = `متبقي ${left} مقاعد فقط!`;
+        }
+
+        const card = document.createElement("div");
+        card.className = `card ${isFull ? "full" : ""}`;
+        card.innerHTML = `
+          <div>
+            <div class="card-top">
+              <div class="icon-box">${act.icon}</div>
+              <span class="dept-tag">${act.dept}</span>
+            </div>
+            <h3>${act.name}</h3>
+          </div>
+          <div>
+            <div class="seats-info">
+              <div class="seats-text">
+                <span class="${statusClass}">${statusLabel}</span>
+                <span>${used} / ${MAX_SEATS}</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill ${barClass}" style="width:${pct}%"></div>
+              </div>
+            </div>
+            <button class="btn-card" ${isFull ? "disabled" : ""} onclick="selectFromCard('${act.id}')">
+              ${isFull ? "اكتمل العدد" : "اختيار هذا النشاط ↑"}
+            </button>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    async function loadData() {
+      const year = document.getElementById("academicYear").value;
+      const week = document.getElementById("weekSelect").value;
+      const badge = document.getElementById("connectionBadge");
+
+      if (!SCRIPT_URL) {
+        badge.textContent = "🧪 وضع المعاينة المحلية";
+        badge.className = "status-badge demo";
+        const localAll = safeGetRecords();
+        currentRecords = localAll.filter(r => r.year === year && r.week === week);
+        recountFromRecords();
+        populateActivitySelect();
+        renderCards();
+        return;
+      }
+
+      badge.textContent = "⏳ جاري تحديث المقاعد...";
+      badge.className = "status-badge";
+
+      try {
+        const res = await fetch(`${SCRIPT_URL}?action=get&year=${encodeURIComponent(year)}&week=${encodeURIComponent(week)}`);
+        const data = await res.json();
+        currentRecords = data.records || [];
+        recountFromRecords();
+        badge.textContent = "🟢 متصل ومحدّث لحظياً";
+        populateActivitySelect();
+        renderCards();
+      } catch (err) {
+        badge.textContent = "⚠️ تعذر الاتصال";
+        badge.className = "status-badge demo";
+        populateActivitySelect();
+        renderCards();
+      }
+    }
+
+    function selectFromCard(activityId) {
+      document.getElementById("activitySelect").value = activityId;
+      document.getElementById("regSection").scrollIntoView({ behavior: "smooth" });
+      document.getElementById("studentName").focus();
+    }
+
+    async function submitRegistration(e) {
+      e.preventDefault();
+      const year = document.getElementById("academicYear").value;
+      const week = document.getElementById("weekSelect").value;
+      const chosenActivity = document.getElementById("activitySelect").value;
+      const name = document.getElementById("studentName").value.trim().replace(/\s+/g, " ");
+      const studentClass = document.getElementById("studentClass").value;
+      const alertBox = document.getElementById("regAlert");
+      const btn = document.getElementById("submitBtn");
+
+      if (!chosenActivity) {
+        alertBox.className = "alert error";
+        alertBox.textContent = "⚠️ يرجى اختيار النشاط من القائمة.";
+        return;
+      }
+
+      if (name.split(" ").length < 3) {
+        alertBox.className = "alert error";
+        alertBox.textContent = "⚠️ يرجى كتابة الاسم الثلاثي كاملاً (ثلاث كلمات على الأقل).";
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = "⏳ جاري الحفظ...";
+
+      const payload = {
+        action: "register",
+        year,
+        week,
+        name,
+        studentClass,
+        activity: chosenActivity
+      };
+
+      if (!SCRIPT_URL) {
+        let all = safeGetRecords();
+        const normName = normalizeArabic(name);
+        const existingIdx = all.findIndex(r =>
+          r.year === year && r.week === week &&
+          normalizeArabic(r.name) === normName && r.studentClass === studentClass
+        );
+
+        const countTarget = all.filter(r => r.year === year && r.week === week && r.activity === chosenActivity).length;
+        if (existingIdx === -1 && countTarget >= MAX_SEATS) {
+          alertBox.className = "alert error";
+          alertBox.textContent = "عذراً، اكتمل العدد (32 متعلمة) في هذا النشاط.";
+          btn.disabled = false;
+          btn.textContent = "✅ تأكيد اختيار النشاط";
+          return;
+        }
+
+        if (existingIdx !== -1) {
+          if (all[existingIdx].activity === chosenActivity) {
+            alertBox.className = "alert success";
+            alertBox.textContent = `أنتِ مسجلة مسبقاً في (${chosenActivity}) لهذا الأسبوع ✅`;
+          } else {
+            if (countTarget >= MAX_SEATS) {
+              alertBox.className = "alert error";
+              alertBox.textContent = "عذراً، النشاط الجديد مكتمل (32 متعلمة).";
+              btn.disabled = false;
+              btn.textContent = "✅ تأكيد اختيار النشاط";
+              return;
+            }
+            const oldAct = all[existingIdx].activity;
+            all[existingIdx].activity = chosenActivity;
+            alertBox.className = "alert success";
+            alertBox.textContent = `✅ تم تغيير نشاطك بنجاح من (${oldAct}) إلى (${chosenActivity}) في ${week}!`;
+          }
+        } else {
+          all.push({ year, week, name, studentClass, activity: chosenActivity, date: new Date().toLocaleString("ar-KW") });
+          alertBox.className = "alert success";
+          alertBox.textContent = `✅ تم تسجيلك بنجاح في (${chosenActivity}) لـ ${week}!`;
+        }
+
+        safeSaveRecords(all);
+        await loadData();
+        btn.disabled = false;
+        btn.textContent = "✅ تأكيد اختيار النشاط";
+        return;
+      }
+
+      try {
+        const res = await fetch(SCRIPT_URL, {
+          method: "POST",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        if (data.status === "ok") {
+          alertBox.className = "alert success";
+          alertBox.textContent = data.message;
+          await loadData();
+        } else {
+          alertBox.className = "alert error";
+          alertBox.textContent = data.message || "حدث خطأ أثناء التسجيل.";
+        }
+      } catch (err) {
+        alertBox.className = "alert error";
+        alertBox.textContent = "⚠️ تعذر الاتصال بالخادم، يرجى المحاولة مرة أخرى.";
+      }
+      btn.disabled = false;
+      btn.textContent = "✅ تأكيد اختيار النشاط";
+    }
+
+    function openAdminLogin() {
+      document.getElementById("adminAuthBox").style.display = "block";
+      document.getElementById("adminContent").style.display = "none";
+      document.getElementById("adminPinInput").value = "";
+      document.getElementById("pinError").className = "alert";
+      document.getElementById("adminModal").classList.add("open");
+    }
+
+    function closeAdminModal() {
+      document.getElementById("adminModal").classList.remove("open");
+    }
+
+    function verifyAdminPin() {
+      const pin = document.getElementById("adminPinInput").value;
+      if (pin !== ADMIN_PIN) {
+        const err = document.getElementById("pinError");
+        err.className = "alert error";
+        err.textContent = "❌ الرقم السري غير صحيح.";
+        return;
+      }
+      document.getElementById("adminAuthBox").style.display = "none";
+      document.getElementById("adminContent").style.display = "block";
+      renderAdminTable();
+    }
+
+    function renderAdminTable() {
+      const year = document.getElementById("academicYear").value;
+      const week = document.getElementById("weekSelect").value;
+      document.getElementById("adminSummaryText").textContent =
+        `عرض المسجلات لـ (${year}) — (${week}) | الإجمالي: ${currentRecords.length} متعلمة`;
+
+      const tbody = document.getElementById("adminTableBody");
+      tbody.innerHTML = "";
+      if (currentRecords.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; color:#64748b;">لا توجد مسجلات لهذا الأسبوع حتى الآن</td></tr>`;
+        return;
+      }
+      currentRecords.forEach((r, i) => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${i + 1}</td>
+          <td>${r.name}</td>
+          <td>${r.studentClass}</td>
+          <td>${r.activity}</td>
+          <td>${r.week}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function exportCSV() {
+      const week = document.getElementById("weekSelect").value;
+      let csv = "\uFEFFالاسم الثلاثي,الصف,النشاط المختار,الأسبوع,العام الدراسي\n";
+      currentRecords.forEach(r => {
+        csv += `"${r.name}","${r.studentClass}","${r.activity}","${r.week}","${r.year}"\n`;
+      });
+      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `أنشطة_ثانوية_الجزائر_${week}.csv`;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    // التشغيل الفوري
+    recountFromRecords();
+    populateActivitySelect();
+    renderCards();
+    loadData();
+  </script>
+</body>
+</html>
