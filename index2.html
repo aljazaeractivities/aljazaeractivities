@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ثانوية الجزائر - أنشطة المتعلمات</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0f2c59;
+      --blue: #1e78c8;
+      --sky: #e0f2fe;
+      --green: #15803d;
+      --green-soft: #dcfce7;
+      --gold: #eab308;
+      --danger: #dc2626;
+      --danger-soft: #fee2e2;
+      --bg: #f4f8fc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #cbd5e1;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .top-bar {
+      background: var(--navy);
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+
+    .eco-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(21, 128, 61, 0.4);
+      border: 1px solid rgba(74, 222, 128, 0.5);
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-weight: 700;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+      color: #fff;
+      padding: 32px 20px 65px;
+      text-align: center;
+    }
+
+    .logo-wrap {
+      width: 125px;
+      height: 125px;
+      margin: 0 auto 12px;
+      background: #fff;
+      border-radius: 50%;
+      padding: 8px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 4px solid var(--gold);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    header p {
+      color: #dbeafe;
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: 1rem;
+    }
+
+    .reg-section {
+      max-width: 960px;
+      margin: -40px auto 30px;
+      padding: 0 16px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .reg-card {
+      background: #fff;
+      border: 2px solid #bfdbfe;
+      border-radius: 22px;
+      padding: 26px;
+      box-shadow: 0 15px 35px rgba(15, 44, 89, 0.12);
+    }
+
+    .reg-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #f1f5f9;
+    }
+
+    .reg-header h2 {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: var(--navy);
+    }
+
+    .status-badge {
+      font-weight: 800;
+      font-size: 0.82rem;
+      padding: 5px 12px;
+      border-radius: 50px;
+      background: var(--green-soft);
+      color: var(--green);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .form-field label {
+      display: block;
+      font-weight: 800;
+      font-size: 0.9rem;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .form-field input,
+    .form-field select {
+      width: 100%;
+      padding: 11px 12px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font-size: 0.96rem;
+      font-weight: 600;
+      background: #f8fafc;
+      color: var(--text);
+    }
+
+    .form-field input:focus,
+    .form-field select:focus {
+      outline: none;
+      border-color: var(--blue);
+      background: #fff;
+    }
+
+    .form-field.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      color: #fff;
+      font-weight: 900;
+      font-size: 1.08rem;
+      cursor: pointer;
+      transition: transform 0.15s, opacity 0.2s;
+    }
+    .btn-submit:hover { opacity: 0.94; transform: translateY(-1px); }
+
+    .note-mini {
+      margin-top: 12px;
+      font-size: 0.88rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    footer {
+      background: var(--navy);
+      color: #cbd5e1;
+      text-align: center;
+      padding: 24px 16px;
+      font-size: 0.92rem;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="eco-pill">🌿 مدرسة صديقة للبيئة • تأسست عام ١٩٥٩م</div>
+  </div>
+
+  <header>
+    <div class="logo-wrap">
+      <span style="font-size:2.4rem">🏫</span>
+    </div>
+    <h1>ثانوية الجزائر - بنات</h1>
+    <p>بوابة الأنشطة المدرسية — اختاري نشاطاً واحداً أسبوعياً</p>
+  </header>
+
+  <section class="reg-section" id="regSection">
+    <div class="reg-card">
+      <div class="reg-header">
+        <h2>📝 تسجيل / تغيير النشاط الأسبوعي</h2>
+        <span class="status-badge">🟢 متصل بنماذج جوجل</span>
+      </div>
+
+      <!-- تم ربط هذا النموذج مباشرة بنموذج جوجل الخاص بك ليرسل البيانات إلى Google Sheets تلقائياً -->
+      <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdNpuJDgylFhncd0140ZCawYXq8Kl401INeYeufJqRrNSA-wA/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+        
+        <div class="form-grid">
+          <div class="form-field">
+            <label>📅 العام الدراسي</label>
+            <select name="entry.1" required>
+              <option value="2026 - 2027">2026 - 2027</option>
+              <option value="2027 - 2028">2027 - 2028</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label>🗓️ الأسبوع الدراسي</label>
+            <select name="entry.2" required>
+              <option value="الأسبوع 1">الأسبوع 1</option>
+              <option value="الأسبوع 2">الأسبوع 2</option>
+              <option value="الأسبوع 3">الأسبوع 3</option>
+              <option value="الأسبوع 4">الأسبوع 4</option>
+              <option value="الأسبوع 5">الأسبوع 5</option>
+              <option value="الأسبوع 6">الأسبوع 6</option>
+              <option value="الأسبوع 7">الأسبوع 7</option>
+              <option value="الأسبوع 8">الأسبوع 8</option>
+              <option value="الأسبوع 9">الأسبوع 9</option>
+              <option value="الأسبوع 10">الأسبوع 10</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label>👩‍🎓 الاسم الثلاثي للمتعلمة</label>
+            <input type="text" name="entry.3" required placeholder="مثال: سارة فهد محمد" />
+          </div>
+
+          <div class="form-field">
+            <label>🏫 الصف والشعبة</label>
+            <select name="entry.4" required>
+              <option value="">-- اختاري الصف --</option>
+              <option value="1-10">1-10</option>
+              <option value="2-10">2-10</option>
+              <option value="3-10">3-10</option>
+              <option value="11ع1">11ع1</option>
+              <option value="11ع2">11ع2</option>
+              <option value="12ع1">12ع1</option>
+            </select>
+          </div>
+
+          <div class="form-field full-width">
+            <label>🌟 اختاري النشاط</label>
+            <select name="entry.5" id="activitySelect" required>
+              <option value="">-- اختاري النشاط من القائمة --</option>
+              <option value="جماعة الأدب">📚 جماعة الأدب (قسم اللغة العربية)</option>
+              <option value="جماعة القصة">📖 جماعة القصة (قسم اللغة الإنجليزية)</option>
+              <option value="جماعة التربية الإسلامية">🕌 جماعة التربية الإسلامية (قسم التربية الإسلامية)</option>
+              <option value="جماعة البحوث العلمية">📐 جماعة البحوث العلمية (قسم الرياضيات)</option>
+              <option value="جماعة المختبر">🧪 جماعة المختبر (قسم الكيمياء)</option>
+              <option value="جماعة حماية البيئة">🌿 جماعة حماية البيئة (قسم الأحياء)</option>
+              <option value="جماعة الرسم">🎨 جماعة الرسم (قسم التربية الفنية)</option>
+              <option value="جماعة المعارض والحاسوب">💻 جماعة المعارض والحاسوب (قسم الحاسوب)</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit" id="submitBtn">✅ تأكيد اختيار النشاط</button>
+      </form>
+
+      <!-- iframe مخفي لمنع انتقال الصفحة إلى رابط جوجل عند الضغط على إرسال -->
+      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { alert('✅ تم تسجيل اختيارك بنجاح ونزل في جدول الإكسل!'); location.reload(); }"></iframe>
+
+      <p class="note-mini">
+        💡 ملاحظة: بمجرد ضغط المتعلمة على زر التأكيد، ستصل البيانات فوراً إلى جدول الإكسل المرتبط بنماذج جوجل.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    جميع الحقوق محفوظة © ثانوية الجزائر - بنات | بوابة الأنشطة المدرسية
+  </footer>
+
+  <script>
+    let submitted = false;
+  </script>
+</body>
+</html>
