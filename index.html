@@ -486,28 +486,7 @@
             </select>
           </div>
 
-          <div class="form-field">
-            <label>🗓️ الأسبوع الدراسي</label>
-            <select id="weekSelect" onchange="loadData()">
-              <option value="الأسبوع 1">الأسبوع 1</option>
-              <option value="الأسبوع 2">الأسبوع 2</option>
-              <option value="الأسبوع 3">الأسبوع 3</option>
-              <option value="الأسبوع 4">الأسبوع 4</option>
-              <option value="الأسبوع 5">الأسبوع 5</option>
-              <option value="الأسبوع 6">الأسبوع 6</option>
-              <option value="الأسبوع 7">الأسبوع 7</option>
-              <option value="الأسبوع 8">الأسبوع 8</option>
-              <option value="الأسبوع 9">الأسبوع 9</option>
-              <option value="الأسبوع 10">الأسبوع 10</option>
-              <option value="الأسبوع 11">الأسبوع 11</option>
-              <option value="الأسبوع 12">الأسبوع 12</option>
-              <option value="الأسبوع 13">الأسبوع 13</option>
-              <option value="الأسبوع 14">الأسبوع 14</option>
-              <option value="الأسبوع 15">الأسبوع 15</option>
-              <option value="الأسبوع 16">الأسبوع 16</option>
-            </select>
-          </div>
-
+         
           <div class="form-field">
             <label>👩‍🎓 الاسم الثلاثي للمتعلمة</label>
             <input type="text" id="studentName" required placeholder="مثال: سارة فهد محمد" />
@@ -642,7 +621,7 @@
 
   <script>
     // ضعي رابط Google Apps Script هنا لاحقاً بين علامتي التنصيص
-    const SCRIPT_URL = "";
+    const SCRIPT_URL = " https://script.google.com/macros/s/AKfycbw4N-TSRrCzQoHfSRdU_ZR6kNhH5MOhakCFLQv_GnZAxNz18-RFAFNkMZhHZ9BhYTt-/exec";
 
     const MAX_SEATS = 32;
     const ADMIN_PIN = "1959";
@@ -787,14 +766,14 @@
 
     async function loadData() {
       const year = document.getElementById("academicYear").value;
-      const week = document.getElementById("weekSelect").value;
+      
       const badge = document.getElementById("connectionBadge");
 
       if (!SCRIPT_URL) {
         badge.textContent = "🧪 وضع المعاينة المحلية";
         badge.className = "status-badge demo";
         const localAll = safeGetRecords();
-        currentRecords = localAll.filter(r => r.year === year && r.week === week);
+        currentRecords = localAll.filter(r => r.year === year;
         recountFromRecords();
         populateActivitySelect();
         renderCards();
@@ -805,7 +784,7 @@
       badge.className = "status-badge";
 
       try {
-        const res = await fetch(`${SCRIPT_URL}?action=get&year=${encodeURIComponent(year)}&week=${encodeURIComponent(week)}`);
+        const res = await fetch(`${SCRIPT_URL}?action=get&year=${encodeURIComponent(year)})}`);
         const data = await res.json();
         currentRecords = data.records || [];
         recountFromRecords();
@@ -829,7 +808,7 @@
     async function submitRegistration(e) {
       e.preventDefault();
       const year = document.getElementById("academicYear").value;
-      const week = document.getElementById("weekSelect").value;
+     
       const chosenActivity = document.getElementById("activitySelect").value;
       const name = document.getElementById("studentName").value.trim().replace(/\s+/g, " ");
       const studentClass = document.getElementById("studentClass").value;
@@ -959,7 +938,7 @@
       const year = document.getElementById("academicYear").value;
       const week = document.getElementById("weekSelect").value;
       document.getElementById("adminSummaryText").textContent =
-        `عرض المسجلات لـ (${year}) — (${week}) | الإجمالي: ${currentRecords.length} متعلمة`;
+        `عرض المسجلات لـ (${year})  | الإجمالي: ${currentRecords.length} متعلمة`;
 
       const tbody = document.getElementById("adminTableBody");
       tbody.innerHTML = "";
@@ -974,23 +953,24 @@
           <td>${r.name}</td>
           <td>${r.studentClass}</td>
           <td>${r.activity}</td>
-          <td>${r.week}</td>
+         
         `;
         tbody.appendChild(tr);
       });
     }
 
-    function exportCSV() {
-      const week = document.getElementById("weekSelect").value;
-      let csv = "\uFEFFالاسم الثلاثي,الصف,النشاط المختار,الأسبوع,العام الدراسي\n";
+   
+ function exportCSV() {
+      const year = document.getElementById("academicYear").value;
+      let csv = "\uFEFFالاسم الثلاثي,الصف,النشاط المختار,العام الدراسي\n";
       currentRecords.forEach(r => {
-        csv += `"${r.name}","${r.studentClass}","${r.activity}","${r.week}","${r.year}"\n`;
+        csv += `"${r.name}","${r.studentClass}","${r.activity}","${r.year}"\n`;
       });
       const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = `أنشطة_ثانوية_الجزائر_${week}.csv`;
+      a.download = `أنشطة_ثانوية_الجزائر_${year}.csv`;
       a.click();
       URL.revokeObjectURL(url);
     }
